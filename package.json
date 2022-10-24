@@ -2,6 +2,10 @@
   "name": "@rikvanhaaren/ah_shop_api",
   "version": "1.0.0",
   "description": "Get products from the AlbertHeijn web store.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RikVanHaaren/ah_shop_api.git"
+  },
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run build & node ./dist",
