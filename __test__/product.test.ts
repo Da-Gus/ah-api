@@ -20,17 +20,6 @@ describe('Product', () => {
 		expect(url).toBe(`sortBy=nutriscore&kenmerk=store_department:non-food&kenmerk=store_department:diepvries`);
 	});
 
-
-	test('getProductByURL', async () => {
-		const client = new AHShopClient();
-
-		const getMock = jest.spyOn(client, 'get');
-		getMock.mockImplementation(() => Promise.resolve({}));
-		await client.product().getProductByURL('/zoeken/api/products/search');
-
-		expect(getMock).toHaveBeenCalledWith('/zoeken/api/products/search');
-	});
-
 	test('getProductByID', async () => {
 		const client = new AHShopClient();
 

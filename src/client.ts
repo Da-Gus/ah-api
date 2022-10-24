@@ -13,6 +13,10 @@ export class AHShopClient{
         return this.ahProduct;
     }
 
+    public async getByURL(uri:string){
+        return await this.get(uri);
+    }
+
     async get (path: string) {
         return this.request(path, requestMethod.get);
     }
