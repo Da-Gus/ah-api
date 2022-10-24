@@ -13,12 +13,4 @@ describe('Product', () => {
 
         expect(String(response).length).toBeGreaterThan(100)
     });
-
-    test('should reject when status is 400', async () => {
-        const client = new AHShopClient();
-        const response = client.get('/zoeken/api/products/search?size=10000');
-        console.log(response);
-
-        expect(response).rejects.toEqual('error')
-    });
 })
