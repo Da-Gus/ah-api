@@ -1,4 +1,4 @@
-import { describe, expect, test } from '@jest/globals';
+import { jest, describe, expect, test } from '@jest/globals';
 import { AHShopClient } from '../src';
 
 describe('Product', () => {
@@ -13,4 +13,14 @@ describe('Product', () => {
 
         expect(String(response).length).toBeGreaterThan(100)
     });
+
+    test('getProductByURL', async () => {
+		const client = new AHShopClient();
+
+		const getMock = jest.spyOn(client, 'get');
+		getMock.mockImplementation(() => Promise.resolve({}));
+		await client.getByURL('/zoeken/api/products/search');
+
+		expect(getMock).toHaveBeenCalledWith('/zoeken/api/products/search');
+	});
 })

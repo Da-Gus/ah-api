@@ -6,10 +6,6 @@ export class Product {
 
     }
 
-    public async getProductByURL(uri:string){
-        return await this.AHShopClient.get(uri);
-    }
-
     public async getProductByID(id:number){
         return await this.AHShopClient.get(`/producten/product/wi${id}`);
     }
