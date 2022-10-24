@@ -1,7 +1,7 @@
 # <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Albert_Heijn_Logo.svg/1200px-Albert_Heijn_Logo.svg.png" alt="AH Logo" width="25"/> AH Shop Api
 '*Unofficial*' Albert Heijn shop api wrapper for Node.js
 
-<a href="https://www.npmjs.com/package/@rikvanhaaren/ah_shop_api"><img src="https://img.shields.io/npm/v/ah_shop-api" alt="NPM version" /></a>
+<a href="https://www.npmjs.com/package/@rikvanhaaren/ah_shop_api"><img src="https://img.shields.io/npm/v/@rikvanhaaren/ah_shop_api" alt="NPM version" /></a>
 <a href="https://github.com/RikVanHaaren/ah_shop_api"><img src="https://img.shields.io/npm/l/@rikvanhaaren/ah_shop_api" alt="MIT license" /></a>
 
 This is a node.js application that is connected to the Albert Heijn shop api. This api has the purpose to search products inside the webshop by a search term. The result of this will be: Cards (products), page, aggregation, taxonomies, querySuggestions.
