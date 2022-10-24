@@ -1,5 +1,5 @@
 {
-  "name": "ah_shop_api",
+  "name": "@rikvanhaaren/ah_shop_api",
   "version": "1.0.0",
   "description": "Get products from the AlbertHeijn web store.",
   "main": "dist/index.js",
