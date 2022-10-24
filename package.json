@@ -1,6 +1,6 @@
 {
   "name": "@rikvanhaaren/ah_shop_api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get products from the AlbertHeijn web store.",
   "repository": {
     "type": "git",
