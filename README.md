@@ -15,7 +15,7 @@ npm install ah_shop_api
 
 then
 ```jsx
-  const AHShopClient = require("ah_shop_api");
+  const AHShopClient = require("@rikvanhaaren/ah_shop_api");
   const client = new AHShopClient();
 ```
 
