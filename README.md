@@ -15,23 +15,26 @@ npm i @rikvanhaaren/ah_shop_api
 
 then
 ```jsx
-  const AHShopClient = require("@rikvanhaaren/ah_shop_api");
+  const { AHShopClient } = require("@rikvanhaaren/ah_shop_api");
+  const client = new AHShopClient();
+```
+or
+```jsx
+  import { AHShopClient } from "@rikvanhaaren/ah_shop_api";
   const client = new AHShopClient();
 ```
 
 # Getting Started
-Get products by name:
+## Get products by name:
 ```jsx
 client.product().getProductByName('Red Bull').then((result) => {
   console.log(JSON.stringify(result));
 });
 ```
 
-Get products by name with filter:
+## Get products by name with filter:
 ```jsx
-const filter: productFilter = {
-  //sortBy: sortByOption.nutriscore,
-  //property: [AfdelingOption.nonFood, AfdelingOption.diepvries],
+const filter = {
   sortBy: "nutriscore",
   property: ["store_department:non-food", "store_department:diepvries"],
   page: 1,
@@ -42,15 +45,28 @@ client.product().getProductByName('Red Bull', filter).then((result) => {
   console.log(JSON.stringify(result));
 });
 ```
+or
+```jsx
+const filter: productFilter = {
+  sortBy: sortByOption.nutriscore,
+  property: [AfdelingOption.nonFood, AfdelingOption.diepvries],
+  page: 1,
+  size: 10,
+}
+    
+client.product().getProductByName('Red Bull', filter).then((result) => {
+  console.log(JSON.stringify(result));
+});
+```
 
-Get products by id:
+## Get products by id:
 ```jsx
 client.product().getProductByID(4117).then((result) => {
   console.log(JSON.stringify(result));
 });
 ```
 
-Get url:
+## Get url:
 ```jsx
 client.getURL("/zoeken/api/products/search").then((result) => {
   console.log(JSON.stringify(result));
@@ -59,7 +75,7 @@ client.getURL("/zoeken/api/products/search").then((result) => {
 
 ---
 
-## License
+# License
 >You can check out the full license [here](https://github.com/RikVanHaaren/ah_shop_api/blob/main/LICENSE)
 
 This project is licensed under the terms of the **MIT** license.
