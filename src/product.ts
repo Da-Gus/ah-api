@@ -13,34 +13,36 @@ export class Product {
     public async getProductByName(productName:string, filter?: productFilter){
         const totalQuery: any = {
             query: productName,
-            sortBy: filter?.sortBy,
             page: filter?.page,
-            size: filter?.size
+            size: filter?.size,
         };
 
-        // Remove undifined objects
+        // Remove undefined objects
         Object.keys(totalQuery).forEach(key => totalQuery[key] === undefined ? delete totalQuery[key] : {});
         
-        if(filter)
-            totalQuery['filters'] = this.productFilterToQuery(filter);
+        let requestUrl = new URLSearchParams(totalQuery);
+        if(filter) {
+            requestUrl = this.productFilterToQuery(requestUrl, filter);
+        }
 
-        return await this.AHShopClient.get(`/zoeken/api/products/search?${new URLSearchParams(totalQuery)}`);
+        return await this.AHShopClient.get(`/zoeken/api/products/search?${requestUrl.toString()}`);
     }
 
-    private productFilterToQuery(filter: productFilter) {
-        const out: string[] = [];
-        
+    private productFilterToQuery(baseUrl: URLSearchParams, filter: productFilter): URLSearchParams {
+        if(!filter)
+            return baseUrl
+
         if(filter.sortBy) {
-            out.push(`sortBy=${filter.sortBy}`);
+            baseUrl.append('sortBy', filter.sortBy);
         }
-        
+
         if(filter.property) {
             filter.property.forEach(prop => {
-                out.push(`kenmerk=${prop}`)
+                baseUrl.append('properties', prop)
             });
         }
 
-        return out.join('&');
+        return baseUrl
     }
 }
 

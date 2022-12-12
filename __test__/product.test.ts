@@ -16,8 +16,8 @@ describe('Product', () => {
 		}
 
 		// @ts-ignore
-		const url = client.product().productFilterToQuery(filter);
-		expect(url).toBe(`sortBy=nutriscore&kenmerk=store_department:non-food&kenmerk=store_department:diepvries`);
+		const url = client.product().productFilterToQuery(new URLSearchParams(), filter).toString();
+		expect(url).toBe(`sortBy=nutriscore&properties=store_department%3Anon-food&properties=store_department%3Adiepvries`);
 	});
 
 	test('getProductByID', async () => {
@@ -54,6 +54,6 @@ describe('Product', () => {
 		}
 		await client.product().getProductByName('red bull', filter);
 
-		expect(getMock).toHaveBeenCalledWith('/zoeken/api/products/search?query=red+bull&sortBy=nutriscore&page=1&size=10&filters=sortBy%3Dnutriscore%26kenmerk%3Dstore_department%3Anon-food%26kenmerk%3Dstore_department%3Adiepvries');
+		expect(getMock).toHaveBeenCalledWith('/zoeken/api/products/search?query=red+bull&page=1&size=10&sortBy=nutriscore&properties=store_department%3Anon-food&properties=store_department%3Adiepvries');
 	});
 })
