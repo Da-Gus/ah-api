@@ -1,5 +1,5 @@
 import { Product } from "./product";
-import axios, * as others from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 
 export class AHShopClient {
   private readonly hostname = "www.ah.nl";
@@ -26,7 +26,7 @@ export class AHShopClient {
     let token: string;
 
     try {
-      const tokenOptions = {
+      const tokenOptions: AxiosRequestConfig = {
         method: "POST",
         url: "https://api.ah.nl/mobile-auth/v1/auth/token/anonymous",
         headers: { "content-type": "application/json" },
@@ -41,7 +41,7 @@ export class AHShopClient {
       return error;
     }
 
-    const options = {
+    const options: AxiosRequestConfig = {
       method: method,
       url: "https://api.ah.nl/" + path,
       headers: {
