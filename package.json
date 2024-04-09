@@ -1,6 +1,6 @@
 {
   "name": "ah-api",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Get product info from Albert Heijn API",
   "repository": {
     "type": "git",
