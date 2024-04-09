@@ -1,5 +1,5 @@
 import { Product } from "./product";
-import axios from "axios";
+import axios, * as others from "axios";
 
 export class AHShopClient {
   private readonly hostname = "www.ah.nl";
