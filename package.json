@@ -1,6 +1,10 @@
 {
   "name": "ah-api",
+<<<<<<< HEAD
   "version": "1.0.4",
+=======
+  "version": "1.0.3",
+>>>>>>> refs/remotes/origin/main
   "description": "Get product info from Albert Heijn API",
   "repository": {
     "type": "git",
