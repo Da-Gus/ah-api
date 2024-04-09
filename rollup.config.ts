@@ -7,5 +7,5 @@ export default {
         format: 'cjs'
     },
     plugins: [typescript()],
-    external: ['https']
+    external: ['axios']
 };
